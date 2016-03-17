@@ -13,13 +13,11 @@ namespace ProcedureToCSVDemo
     {
         protected string _connectionString { get; set; }
         protected int _timeout { get; set; }
-        protected string _company { get; set; }
 
         public DbBase()
         {
             _timeout = int.Parse(ConfigurationSettings.AppSettings["sqlCommandTimeout"]);
             _connectionString = ConfigurationSettings.AppSettings["sqlConn.ConnectionString"];
-            _company = ConfigurationSettings.AppSettings["Company"];
         }
 
         protected SqlConnection GetConnection()
@@ -30,7 +28,7 @@ namespace ProcedureToCSVDemo
 
     public class DbMethods : DbBase
     {
-        public static DataTable FetchResultSet(string procedure, params SqlParameter[] p)
+        public static DataTable FetchDataTable(string procedure, params SqlParameter[] p)
         {
             var db = new DbMethods();
             return db.GetTable(procedure, p);
