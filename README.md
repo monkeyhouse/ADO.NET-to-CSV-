@@ -6,6 +6,7 @@ A light wrapper *syntactic sugar* on top of [CSV Helper](https://github.com/Josh
 Has simple interface for mapping betwen database column names and English column names and formatting too.
 
 
+
 Sample use is like
 ``` c#
 var dt = DbMethods.FetchDataTable(
@@ -36,6 +37,9 @@ var csvBytes = dt.ExportToCsv(renderOptions);
 
 File.WriteAllBytes("C:\path\to\the.csv", csvBytes);
 ```
+
+Also allows for base files with common mapping - in case you have to create csv for many columns which follow the same column name and formatting requirements.
+
 
 Why upload? Its a nice bit of code I enjoyed writing in a few hours.
 
