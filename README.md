@@ -38,7 +38,7 @@ var csvBytes = dt.ExportToCsv(renderOptions);
 File.WriteAllBytes("C:\path\to\the.csv", csvBytes);
 ```
 
-Also allows for base files with common mapping - in case you have to create csv for many columns which follow the same column name and formatting requirements.
+Also allows for base files with common mapping - in case you have to create csv for many procedures which follow the same column name and formatting requirements.
 
 
 Why upload? Its a nice bit of code I enjoyed writing in a few hours.
